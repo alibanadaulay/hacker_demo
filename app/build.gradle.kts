@@ -80,6 +80,8 @@ dependencies {
     testImplementation(Junit5.suite)
     testRuntimeOnly(Junit5.vintage_engine)
 
+
+    testImplementation(OtherLib.turbin)
     testImplementation(Junit.junit)
     testImplementation(Kotlin.coroutines_test)
     androidTestImplementation(Junit.android_junit)

@@ -1,17 +1,20 @@
-package id.bluebird.mall.hacker_demo
+package com.ali.hacker_demo.domain.utils
 
 import androidx.arch.core.executor.ArchTaskExecutor
 import androidx.arch.core.executor.TaskExecutor
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.*
+import kotlinx.coroutines.test.StandardTestDispatcher
+import kotlinx.coroutines.test.TestScope
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.setMain
 import org.junit.jupiter.api.extension.AfterEachCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
+import org.junit.jupiter.api.extension.Extension
 import org.junit.jupiter.api.extension.ExtensionContext
-import java.security.cert.Extension
 
 @ExperimentalCoroutinesApi
-abstract class TestCoroutineRule : Extension, BeforeEachCallback, AfterEachCallback {
+class TestCoroutineRule : Extension, BeforeEachCallback, AfterEachCallback {
 
     private val _dispatcher = StandardTestDispatcher()
     private val _scope = TestScope(_dispatcher)
