@@ -34,7 +34,7 @@ class GetTopStoryUsesCaseImpl @Inject constructor(private val iHackerNew: IHacke
                 }
             }
         } else {
-
+            emit(UsesCaseResult.OnError(Throwable(response.errorBody()?.string() ?: "")))
         }
 
     }
