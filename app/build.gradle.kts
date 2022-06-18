@@ -1,5 +1,5 @@
 plugins {
-    id ("com.android.application")
+    id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("dagger.hilt.android.plugin")
@@ -15,6 +15,11 @@ android {
         versionName = "1.0.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        buildConfigField(
+            type = "String",
+            name = "BASE_URL",
+            value = "\"https://hacker-news.firebaseio.com/v0/\""
+        )
     }
 
     /** used for unit-test run with Junit5 */
@@ -56,6 +61,9 @@ dependencies {
 
     implementation(Hilt.android)
     kapt(Hilt.compiler)
+
+    implementation(Retrofit2.retrofit)
+    implementation(Retrofit2.moshi)
 
     implementation(Navigation.ktx)
     implementation(Navigation.ui_ktx)
