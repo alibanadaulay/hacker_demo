@@ -73,6 +73,13 @@ dependencies {
     implementation(UiMaterial.material)
     implementation(UiMaterial.recyclerview)
 
+    testImplementation(Mockk.mockk)
+    testImplementation(Mockk.agent_jvm)
+
+    testImplementation(Junit5.jupiter)
+    testImplementation(Junit5.suite)
+    testRuntimeOnly(Junit5.vintage_engine)
+
     testImplementation(Junit.junit)
     testImplementation(Kotlin.coroutines_test)
     androidTestImplementation(Junit.android_junit)

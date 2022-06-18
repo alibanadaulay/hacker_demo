@@ -9,7 +9,6 @@ import com.ali.hacker_demo.common.model.NewsDetailCache
 import com.ali.hacker_demo.domain.GetHackerNewsByIdUsesCase
 import com.ali.hacker_demo.domain.GetTopStoryUsesCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

@@ -1,6 +1,5 @@
 package com.ali.hacker_demo.domain
 
-import android.util.Log
 import com.ali.hacker_demo.common.UsesCaseResult
 import com.ali.hacker_demo.data_layer.api.IHackerNew
 import com.ali.hacker_demo.common.model.NewsCache
@@ -29,7 +28,7 @@ class GetTopStoryUsesCaseImpl @Inject constructor(private val iHackerNew: IHacke
                         score = responseItem.score
                     )
                 )
-                if (result.size > count * 20) {
+                if (result.size > count * 20 || result.size == topStoriesId.size) {
                     emit(UsesCaseResult.OnSuccess(result))
                     count++
                 }
